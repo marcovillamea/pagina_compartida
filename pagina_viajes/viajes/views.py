@@ -6,16 +6,6 @@ from viajes.models import viajes
 from viajes.forms import mi_formulario
 
 
-# def info(request):
-#     todo = viajes.objects.create(name = "marco", apellido = "villamea", descripcion = "estoy probando 2.0")
-#     context = {
-#         "todo": todo
-        
-#         }
-
-#     return render(request,"informacion.html",context=context)
-
-
 def viajeformulario(request):
     if request.method == "POST":
         viajeformulario = mi_formulario(request.POST)
