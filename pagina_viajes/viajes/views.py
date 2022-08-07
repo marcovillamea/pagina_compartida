@@ -1,7 +1,5 @@
-
-
-
 from django.shortcuts import render,redirect
+from viajes.models import Paquete, Vuelo, Hotel
 
 from viajes.models import viajes
 
@@ -42,8 +40,6 @@ def viajeformulario(request):
         return render(request,"viajeformulario.html",context=context)
 
 
-
-
 def lista_viajes(request):
     list = viajes.objects.all()
     context = {
@@ -61,3 +57,15 @@ def search_products(request):
     }
 
     return render(request, "search_products.html",context=context)
+
+def verPaquetes(request):
+    paquetes = Paquete.objects.all()
+    return render(request,"paquete.html",context={"paquetes" : paquetes})
+
+def verVuelo(request):
+    vuelos = Vuelo.objects.all()
+    return render(request,"vuelo.html",context={"vuelos" : vuelos})
+
+def verHotel(request):
+    hotels = Hotel.objects.all()
+    return render(request,"hotel.html",context={"hotels" : hotels})
