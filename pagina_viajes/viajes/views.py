@@ -95,8 +95,7 @@ def formulario_vuelo(request):
                 date_return = form.cleaned_data["date_return"],
                 price= form.cleaned_data["price"],
                 )
-            return redirect(verVuelo)
-
+        return redirect(verVuelo)
     elif request.method == "GET":
         form = formulario_create_vuelo()
         context = {"form":form}
@@ -114,7 +113,7 @@ def formulario_hotel(request):
                 date_return = form.cleaned_data["date_return"],
                 price= form.cleaned_data["price"]
                 )
-            return redirect(verHotel)
+        return redirect(verHotel)
     elif request.method == "GET":
         form = formulario_create_hotel()
         context = {"form": form}
