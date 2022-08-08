@@ -86,20 +86,20 @@ def formulario_vuelo(request):
     if request.method == "POST":
         form = formulario_create_vuelo(request.POST)
 
-        if form.is_valid():
-            Vuelo.objects.create(
-                name = form.cleaned_data["name"],
-                departure = form.cleaned_data["departure"],
-                destination = form.cleaned_data["destination"],
-                date_departue = form.cleaned_data["date_departure"],
-                date_return = form.cleaned_data["date_return"],
-                price= form.cleaned_data["price"],
-                )
+    if form.is_valid():
+        Vuelo.objects.create(
+            name = form.cleaned_data["name"],
+            departure = form.cleaned_data["departure"],
+            destination = form.cleaned_data["destination"],
+            date_departue = form.cleaned_data["date_departue"],
+            date_return = form.cleaned_data["date_return"],
+            price= form.cleaned_data["price"]
+            )
         return redirect(verVuelo)
     elif request.method == "GET":
-        form = formulario_create_vuelo()
-        context = {"form":form}
-        return render(request,"formulario_nuevovuelo.html", context=context)
+        form = formulario_create_hotel()
+        context = {"form": form}
+        return render(request,"formulario_nuevovuelo.html", context = context)
 
 def formulario_hotel(request):
     if request.method == "POST":
