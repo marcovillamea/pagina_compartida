@@ -1,3 +1,15 @@
+{%  extends "template/base.html" %}
+
+{% block titulo %}
+
+Formulario para nuevos hoteles:
+
+{% endblock %}
+
+
+{% block contenidoquecambia %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +20,19 @@
 </head>
 <body>
     {% for i in hotels %}
-        <h1>{{i.name}}</h1>
-        <h2>{{i.location}}</h2>
-        <h2>Fecha de Entrada: {{i.date_departue}}</h2>
-        <h2>Fecha de Salida: {{i.date_return}}</h2>
-        <h3>Precio: {{i.price}}</h3>
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h3 class="card-title">{{i.name}}</h3>
+            <h4 class="card-text">{{i.location}}</h4>
+            <p class="card-text">Fecha de Entrada: {{i.date_departue}}</p>
+            <p class="card-text">Fecha de Salida: {{i.date_return}}</p>
+            <p class="card-text">Precio: {{i.price}}</p>
+        </div>
+    </div>
+
     {% endfor %}
 </body>
 </html>
+
+{% endblock  %}
