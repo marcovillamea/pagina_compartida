@@ -43,15 +43,6 @@ def lista_viajes(request):
     return render(request,"lista_de_lugares.html",context=context)
 
 
-def search_products(request):
-    search = request.GET["search"]
-    list = viajes.objects.filter(name__icontains=search)
-    context = {
-        "list":list
-    }
-
-    return render(request, "search_products.html",context=context)
-
 def verPaquetes(request):
     paquetes = Paquete.objects.all()
     return render(request,"paquete.html",context={"paquetes" : paquetes})
@@ -118,3 +109,21 @@ def formulario_hotel(request):
         form = formulario_create_hotel()
         context = {"form": form}
         return render(request,"formulario_nuevohotel.html", context = context)
+
+def search_hotel(request):
+    print(request.GET)
+    hotel = Hotel.objects.filter(name__icontains = request.GET['search'])
+    context = {'hotel':hotel}
+    return render(request, 'search_products.html', context= context)
+
+def search_vuelo(request):
+    print(request.GET)
+    vuelo = Vuelo.objects.filter(name__icontains = request.GET['search'])
+    context = {'vuelo':vuelo}
+    return render(request, 'search_products.html', context= context)
+
+def search_paquete(request):
+    print(request.GET)
+    paquete = Paquete.objects.filter(name__icontains = request.GET['search'])
+    context = {'paquete':paquete}
+    return render(request, 'search_products.html', context= context)

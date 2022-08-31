@@ -6,20 +6,20 @@ search
 
 
 {% block contenidoquecambia %}
-{% for lista in list %}
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">{{lista.name}}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">{{lista.location}}</h6>
-      <p class="card-text">{{lista.description}}</p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
+{% for i in hotel %}
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h3 class="card-title">{{i.name}}</h3>
+            <h4 class="card-text">{{i.location}}</h4>
+            <p class="card-text">Fecha de Entrada: {{i.date_departue}}</p>
+            <p class="card-text">Fecha de Salida: {{i.date_return}}</p>
+            <h3 class="card-text">Precio: {{i.price}}</h3>
+        </div>
     </div>
-  </div>
 
 
 {% endfor %}
-
 
 
 {% endblock %}
