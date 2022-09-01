@@ -127,3 +127,13 @@ def search_paquete(request):
     paquete = Paquete.objects.filter(name__icontains = request.GET['search'])
     context = {'paquete':paquete}
     return render(request, 'search_products.html', context= context)
+
+def delete_hotel(request, pk):
+    if request.method == "GET":
+        hotel = Hotel.objects.get(pk=pk)
+        context = {'hotel':hotel}
+        return render(request, "delete_hotel.html", context = context)
+    elif request.method == "POST":
+        hotel = Hotel.objects.get(pk=pk)
+        hotel.delete()
+        return redirect(verHotel)
