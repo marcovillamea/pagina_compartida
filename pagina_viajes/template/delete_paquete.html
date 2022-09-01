@@ -1,0 +1,19 @@
+{%  extends "template/base.html" %}
+
+{% block titulo %}
+Borrar Paquete
+{% endblock %}
+
+{% block contenidoquecambia %}
+
+<p>¿Seguro quieres borrar este paquete?</p>
+
+
+<form actions="" method="POST">
+    {% csrf_token %}
+    
+        <p><input type="submit", value="Borrar"></p>
+    
+    </form>
+
+{% endblock  %}

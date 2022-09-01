@@ -137,3 +137,23 @@ def delete_hotel(request, pk):
         hotel = Hotel.objects.get(pk=pk)
         hotel.delete()
         return redirect(verHotel)
+
+def delete_vuelo(request, pk):
+    if request.method == "GET":
+        vuelo = Vuelo.objects.get(pk=pk)
+        context = {'vuelo':vuelo}
+        return render(request, "delete_vuelo.html", context = context)
+    elif request.method == "POST":
+        vuelo = Vuelo.objects.get(pk=pk)
+        vuelo.delete()
+        return redirect(verVuelo)
+
+def delete_paquete(request, pk):
+    if request.method == "GET":
+        paquete = Paquete.objects.get(pk=pk)
+        context = {'paquete':paquete}
+        return render(request, "delete_paquete.html", context = context)
+    elif request.method == "POST":
+        paquete = Paquete.objects.get(pk=pk)
+        paquete.delete()
+        return redirect(verPaquetes)
