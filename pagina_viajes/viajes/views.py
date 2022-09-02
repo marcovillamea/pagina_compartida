@@ -157,3 +157,21 @@ def delete_paquete(request, pk):
         paquete = Paquete.objects.get(pk=pk)
         paquete.delete()
         return redirect(verPaquetes)
+
+def update_hotel(request, pk):
+    if request.method == "POST":
+        form = formulario_create_hotel(request.POST)
+        if form.is_valid():
+            hotel = Hotel.objects.get(id=pk)
+            hotel.name = form.cleaned_data["name"]
+            hotel.location = form.cleaned_data["location"]
+            hotel.date_departue = form.cleaned_data["date_departue"]
+            hotel.date_return = form.cleaned_data["date_return"]
+            hotel.price= form.cleaned_data["price"]
+            hotel.save()
+            return redirect(verHotel)
+    elif request.method == "GET":
+        hotel = Hotel.objects.get(id=pk)
+        form = formulario_create_hotel(initial={"Hotel":hotel.name, "Lugar":hotel.location,"Fecha de Entrada":hotel.date_departue,"Fecha de Salida":hotel.date_return,"Precio":hotel.price})
+        context = {'form':form}
+        return render(request,"update_hotel.html",context)
