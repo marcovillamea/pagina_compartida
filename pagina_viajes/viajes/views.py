@@ -175,3 +175,39 @@ def update_hotel(request, pk):
         form = formulario_create_hotel(initial={"Hotel":hotel.name, "Lugar":hotel.location,"Fecha de Entrada":hotel.date_departue,"Fecha de Salida":hotel.date_return,"Precio":hotel.price})
         context = {'form':form}
         return render(request,"update_hotel.html",context)
+
+def update_paquete(request, pk):
+    if request.method == "POST":
+        form = formulario_create_paquete(request.POST)
+        if form.is_valid():
+            paquete = Paquete.objects.get(id=pk)
+            paquete.name = form.cleaned_data["name"]
+            paquete.location = form.cleaned_data["location"]
+            paquete.description = form.cleaned_data["description"]
+            paquete.price= form.cleaned_data["price"]
+            paquete.save()
+            return redirect(verPaquetes)
+    elif request.method == "GET":
+        paquete = Paquete.objects.get(id=pk)
+        form = formulario_create_paquete(initial={"Paquete":paquete.name, "Lugar":paquete.location,"Descripcion":paquete.description,"Precio":paquete.price})
+        context = {'form':form}
+        return render(request,"update_paquete.html",context)
+
+def update_vuelo(request, pk):
+    if request.method == "POST":
+        form = formulario_create_vuelo(request.POST)
+        if form.is_valid():
+            vuelo = Vuelo.objects.get(id=pk)
+            vuelo.name = form.cleaned_data["name"]
+            vuelo.departure = form.cleaned_data["departure"]
+            vuelo.destination = form.cleaned_data["destination"]
+            vuelo.date_departue = form.cleaned_data["date_departue"]
+            vuelo.date_return = form.cleaned_data["date_return"]
+            vuelo.price= form.cleaned_data["price"]
+            vuelo.save()
+            return redirect(verVuelo)
+    elif request.method == "GET":
+        vuelo = Vuelo.objects.get(id=pk)
+        form = formulario_create_vuelo(initial={"Vuelo a ":vuelo.name, "Fecha de Ida":vuelo.date_departue,"Fecha de Vuelta":vuelo.date_return,"Precio":vuelo.price})
+        context = {'form':form}
+        return render(request,"update_vuelo.html",context)

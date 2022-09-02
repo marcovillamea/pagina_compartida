@@ -1,0 +1,22 @@
+{%  extends "template/base.html" %}
+
+{% block titulo %}
+Actualizar Paquete
+{% endblock %}
+
+{% block contenidoquecambia %}
+
+<form actions="" method="POST">
+{% csrf_token %}
+    
+<table>
+    
+    {{form.as_table}}
+    
+</table>
+    
+<p><input type="submit", value="Enviar"></p>
+    
+</form>
+
+{% endblock  %}
