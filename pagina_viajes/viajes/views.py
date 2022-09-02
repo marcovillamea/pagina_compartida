@@ -211,3 +211,4 @@ def update_vuelo(request, pk):
         form = formulario_create_vuelo(initial={"Vuelo a ":vuelo.name, "Fecha de Ida":vuelo.date_departue,"Fecha de Vuelta":vuelo.date_return,"Precio":vuelo.price})
         context = {'form':form}
         return render(request,"update_vuelo.html",context)
+
