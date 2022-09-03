@@ -1,0 +1,22 @@
+{%  extends "template/base.html" %}
+
+{% block titulo %}
+Register
+{% endblock %}
+
+{% block contenidoquecambia %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    
+        <table>
+    
+            {{form.as_table}}
+    
+        </table>
+    
+        <p><input type="submit" value="Iniciar sesión"></p>
+    
+        </form>
+    
+    {% endblock %}

@@ -2,7 +2,7 @@
 
 {% block titulo %}
 
-Index
+Home
 
 {% endblock %}
 
@@ -11,4 +11,10 @@ Index
 
 <h1>Este es el index</h1>
 
-{% endblock  %}
+{% if message %}
+
+    <h2>{{message}}</h2>
+
+{% endif %}
+
+{% endblock %}

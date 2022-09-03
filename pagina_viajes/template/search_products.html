@@ -15,6 +15,8 @@ search
             <p class="card-text">Fecha de Entrada: {{i.date_departue}}</p>
             <p class="card-text">Fecha de Salida: {{i.date_return}}</p>
             <h3 class="card-text">Precio: {{i.price}}</h3>
+            <a href="/info/update-hotel/{{ i.id }}/" class="btn btn-primary">Editar</a>
+            <a href="/info/delete-hotel/{{ i.id }}/" class="btn btn-danger">Borrar</a>
         </div>
     </div>
 
