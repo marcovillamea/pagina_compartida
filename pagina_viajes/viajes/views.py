@@ -2,11 +2,8 @@ from django.shortcuts import render,redirect
 from multiprocessing import context
 from datetime import date
 from django.http import HttpResponse
-
 from viajes.models import Paquete, Vuelo, Hotel
-
 from viajes.models import viajes
-
 from viajes.forms import mi_formulario, formulario_create_paquete,formulario_create_vuelo,formulario_create_hotel
 
 
@@ -30,7 +27,7 @@ def viajeformulario(request):
         context = {
             "viajeformulario": viajeformulario
         }
-     
+    
         return render(request,"viajeformulario.html",context=context)
 
 
