@@ -36,3 +36,7 @@ def register(request):
     elif request.method == 'GET':
         form = User_registration_form()
         return render(request, 'accounts/register.html', {'form': form})
+
+def show_profile(request):
+    if request.user.is_authenticated:
+        return HttpResponse(request.user.profile.phone)
