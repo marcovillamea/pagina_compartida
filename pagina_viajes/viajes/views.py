@@ -3,41 +3,7 @@ from multiprocessing import context
 from datetime import date
 from django.http import HttpResponse
 from viajes.models import Paquete, Vuelo, Hotel
-from viajes.models import viajes
-from viajes.forms import mi_formulario, formulario_create_paquete,formulario_create_vuelo,formulario_create_hotel
-
-
-def viajeformulario(request):
-    if request.method == "POST":
-        viajeformulario = mi_formulario(request.POST)
-
-        if viajeformulario.is_valid():
-            viajes.objects.create(
-                name = viajeformulario.cleaned_data["name"],
-                apellido = viajeformulario.cleaned_data["apellido"],
-                descripcion = viajeformulario.cleaned_data["descripcion"],
-                )
-
-            return redirect(lista_viajes)
-            
-        
-
-    elif request.method == "GET":
-        viajeformulario = mi_formulario()
-        context = {
-            "viajeformulario": viajeformulario
-        }
-    
-        return render(request,"viajeformulario.html",context=context)
-
-
-def lista_viajes(request):
-    list = viajes.objects.all()
-    context = {
-        "list": list
-    }
-
-    return render(request,"lista_de_lugares.html",context=context)
+from viajes.forms import formulario_create_paquete,formulario_create_vuelo,formulario_create_hotel
 
 
 def verPaquetes(request):
@@ -111,18 +77,6 @@ def search_hotel(request):
     print(request.GET)
     hotel = Hotel.objects.filter(name__icontains = request.GET['search'])
     context = {'hotel':hotel}
-    return render(request, 'search_products.html', context= context)
-
-def search_vuelo(request):
-    print(request.GET)
-    vuelo = Vuelo.objects.filter(name__icontains = request.GET['search'])
-    context = {'vuelo':vuelo}
-    return render(request, 'search_products.html', context= context)
-
-def search_paquete(request):
-    print(request.GET)
-    paquete = Paquete.objects.filter(name__icontains = request.GET['search'])
-    context = {'paquete':paquete}
     return render(request, 'search_products.html', context= context)
 
 def delete_hotel(request, pk):

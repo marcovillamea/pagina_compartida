@@ -1,17 +1,13 @@
 from cmath import inf
 from django.urls import path
 from viajes.views import verPaquetes, verHotel, verVuelo, formulario_paquete,formulario_vuelo,formulario_hotel
-from viajes.views import search_hotel, viajeformulario, lista_viajes, search_vuelo, search_paquete
+from viajes.views import search_hotel
 from viajes.views import delete_hotel, delete_paquete, delete_vuelo
 from viajes.views import update_hotel, update_vuelo, update_paquete
 
 
 urlpatterns = [
-    path("formulario/", viajeformulario, name= "formulario"),
-    path("lista_viajes/", lista_viajes, name= "lista" ),
     path("search_products/",search_hotel, name = "search hotel"),
-    path("search_products/",search_vuelo, name = "search vuelo"),
-    path("search_products/",search_paquete, name = "search paquete"),
     path("viajes-paquetes/",verPaquetes),
     path("viajes-hotels/",verHotel),
     path("viajes-vuelos/",verVuelo),
