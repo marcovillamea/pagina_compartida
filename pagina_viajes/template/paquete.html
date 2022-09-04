@@ -34,7 +34,7 @@ Paquetes
         <a href="/info/delete-paquete/{{ paquete.id }}/" class="btn btn-danger">Borrar</a>
         {% endif %}
         {% if request.user.is_authenticated %}
-        <a href="#" class="btn btn-primary">Seleccionar</a>
+        <a href="/not-found/" class="btn btn-primary">Seleccionar</a>
         {% endif %}
         </div>
     </div>
@@ -44,6 +44,7 @@ Paquetes
     <a href="/info/create-paquete/" class="btn btn-success">Crear</a>
     {% endif %}
 </body>
+
 </html>
 
 {% endblock  %}

@@ -1,0 +1,22 @@
+{%  extends "template/base.html" %}
+
+{% block titulo %}
+Editar Perfil
+{% endblock %}
+
+{% block contenidoquecambia %}
+
+<form action="" method="POST">
+{% csrf_token %}
+    
+    <table>
+    
+    {{UserEditForm.as_table}}
+    
+    </table>
+    
+    <p><input type="submit" value="Enviar"></p>
+    
+</form>
+
+{% endblock %}

@@ -3,7 +3,8 @@ from django.http import HttpResponse
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout , authenticate
 from accounts.forms import User_registration_form
-
+from accounts.models import User_profile
+from django.contrib.auth.decorators import login_required
 
 def login_request(request):
     if request.method == 'POST':
@@ -37,6 +38,6 @@ def register(request):
         form = User_registration_form()
         return render(request, 'accounts/register.html', {'form': form})
 
+@login_required
 def show_profile(request):
-    if request.user.is_authenticated:
-        return HttpResponse(request.user.profile.phone)
+    return render(request,"accounts/profile.html")
