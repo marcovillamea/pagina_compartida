@@ -6,6 +6,7 @@ class formulario_create_paquete(forms.Form):
     location = forms.CharField(max_length=200)
     description = forms.CharField(max_length=200)
     price= forms.FloatField()
+    image= forms.ImageField(required=False)
 
 class formulario_create_vuelo(forms.Form):
     name = forms.CharField(max_length=200)
@@ -14,6 +15,7 @@ class formulario_create_vuelo(forms.Form):
     date_departue = forms.CharField(max_length=200)
     date_return = forms.CharField(max_length=200)
     price= forms.FloatField()
+    image= forms.ImageField(required=False)
 
 class formulario_create_hotel(forms.Form):
     name = forms.CharField(max_length=200)
@@ -21,3 +23,4 @@ class formulario_create_hotel(forms.Form):
     date_departue = forms.CharField(max_length=200)
     date_return = forms.CharField(max_length=200)
     price = forms.FloatField()
+    image= forms.ImageField(required=False)

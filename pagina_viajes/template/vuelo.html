@@ -20,6 +20,9 @@ Vuelos
     {% for i in vuelos %}
 
         <div class="card" style="width: 18rem;">
+            {% if i.image %}
+            <image src="{{ i.image.url }}" class="card-img-top">
+            {% endif %}
             <div class="card-body">
             <h2 class="card-title">{{i.name}}</h2>
             <p class="card-text">Partida: {{i.departure}}</p>

@@ -6,6 +6,7 @@ class Paquete(models.Model):
     location = models.TextField()
     description = models.TextField()
     price= models.FloatField()
+    image=models.ImageField(upload_to="viajes/",null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -17,6 +18,7 @@ class Vuelo(models.Model):
     date_departue = models.DateField(auto_now_add=True, null=True, blank=True)
     date_return = models.DateField(auto_now_add=True, null=True, blank=True)
     price= models.FloatField()
+    image=models.ImageField(upload_to="viajes/",null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -27,6 +29,7 @@ class Hotel(models.Model):
     date_departue = models.DateField(auto_now_add=True, null=True, blank=True)
     date_return = models.DateField(auto_now_add=True, null=True, blank=True)
     price= models.FloatField()
+    image=models.ImageField(upload_to="viajes/",null=True, blank=True)
 
     def __str__(self):
         return self.name

@@ -20,14 +20,15 @@ def verHotel(request):
 
 def formulario_paquete(request):
     if request.method == "POST":
-        form = formulario_create_paquete(request.POST)
+        form = formulario_create_paquete(request.POST, request.FILES)
 
         if form.is_valid():
             Paquete.objects.create(
                 name = form.cleaned_data["name"],
                 location = form.cleaned_data["location"],
                 description = form.cleaned_data["description"],
-                price= form.cleaned_data["price"]
+                price= form.cleaned_data["price"],
+                image=form.cleaned_data["image"]
                 )
             return redirect(verPaquetes)
 
@@ -38,7 +39,7 @@ def formulario_paquete(request):
 
 def formulario_vuelo(request):
     if request.method == "POST":
-        form = formulario_create_vuelo(request.POST)
+        form = formulario_create_vuelo(request.POST, request.FILES)
         
         if form.is_valid():
             Vuelo.objects.create(
@@ -47,7 +48,8 @@ def formulario_vuelo(request):
                 destination = form.cleaned_data["destination"],
                 date_departue = form.cleaned_data["date_departue"],
                 date_return = form.cleaned_data["date_return"],
-                price= form.cleaned_data["price"]
+                price= form.cleaned_data["price"],
+                image=form.cleaned_data["image"]
                 )
         return redirect(verVuelo)
     elif request.method == "GET":
@@ -57,7 +59,7 @@ def formulario_vuelo(request):
 
 def formulario_hotel(request):
     if request.method == "POST":
-        form = formulario_create_hotel(request.POST)
+        form = formulario_create_hotel(request.POST, request.FILES)
 
         if form.is_valid():
             Hotel.objects.create(
@@ -65,7 +67,8 @@ def formulario_hotel(request):
                 location = form.cleaned_data["location"],
                 date_departue = form.cleaned_data["date_departue"],
                 date_return = form.cleaned_data["date_return"],
-                price= form.cleaned_data["price"]
+                price= form.cleaned_data["price"],
+                image=form.cleaned_data["image"]
                 )
         return redirect(verHotel)
     elif request.method == "GET":
