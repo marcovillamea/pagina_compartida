@@ -32,15 +32,17 @@ El buscador sólo busca opciones de Hoteles.
 - Regístrese e ingrese:
   - Username
   - Email
-  - Password
-  - Password confirmation
+  - Password(Asegúrese de que tenga una mayúscula, números y algún símbolo)
+  - Password confirmation(Asegúrese de que sea igual a la anterior)
 
 Se redigirá directamente a login, donde tendrá que volver a ingresas sus datos.
 
-A partir de ahí, podrán los usuarios tener la opción de "seleccionar" sobre los vuelos, paquetes y hoteles.
+A partir de ahí, podrán los usuarios tener la opción de "seleccionar" sobre los vuelos, paquetes y hoteles. Esto llevará a una página en contrucción.
+
+Aparecerá la opción "Perfil" en el navbar, haga click y se observarán fields con instrucciones. Ingrese a "Editar" bajo la foto del uruario para hacer los cambios. Notese que no se podrá cambiar el email ni la contraseña, aunque aparezcan las opciones. Una vez terminado, haga click en "Guardar".
 
 Para salir, clickee sobre "Cierre Sesión".
 
-:point_right:Accediendo con el user useradmin(Superuser status), podrá observar las opciones de "Editar" y "Borrar" lo que se ofrece. También abajo de cada link, aparece la opción de "Crear".
+:point_right:Accediendo con el user useradmin(Superuser status), podrá observar las opciones de "Editar" y "Borrar" en cada vuelo, paquete y hotel que se ofrece. También abajo de cada link, aparece la opción de "Crear".
 
 :point_right:Todo lo anterior también se puede realizsar desde el link http://127.0.0.1:8000/admin/ .
