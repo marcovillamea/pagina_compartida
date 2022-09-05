@@ -6,29 +6,35 @@ Python 3.10
 Django 4.0.6
 
 ## Integrantes 
-Marco Villamea
 
 Celeste D'Agostino
 
+Marco Villamea
+
+
 ## Trabajo
-La primera entrega pagina_compartida es una página de viajes diseñada con Python y HTML, que ofrece diferentes opciones de paquetes, vuelos y hoteles:airplane:
+El trabajo pagina_compartida es una página de viajes diseñada con Python y HTML, que ofrece diferentes opciones de paquetes, vuelos y hoteles:airplane:
 
 ## Tabla de Contenidos
 
-Se ingresa a través de página http://127.0.0.1:8000/ , donde se debe optar por http://127.0.0.1:8000/info/.
+:point_right:En http://127.0.0.1:8000/ ya aparecerá el inicio de la página. 
 
-:point_right: A partir de ahí, se observan diferentes opciones:
+Haga click en el botón "Más sobre esta página" para conocer más sobre el proyecto y los integrantes.
 
-En http://127.0.0.1:8000/info/viajes-paquetes/ , aparecen las diferentes ofertas de paquetes de la página.
+Accediendo en "Hoteles", "Paquetes" y "Vuelos", podrá observar lo que se ofrece. 
 
-En http://127.0.0.1:8000/info/viajes-hotels/ , aparecen las diferentes ofertas de hoteles de la página.
+:point_right:Para acceder a la cuenta:
 
-En http://127.0.0.1:8000/info/viajes-vuelos/ , aparecen las diferentes ofertas de vuelos de la página.
+- Regístrese e ingrese:
+  - Username
+  - Email
+  - Password
+  - Password confirmation
 
-:point_right: Para insertar nuevos datos, se debe optar por diferentes formularios dependiendo del producto:
+Se redigirá directamente a login, donde tendrá que volver a ingresas sus datos.
 
-Para agregar nuevos paquetes, ingrese a http://127.0.0.1:8000/info/create-paquete/ .
+A partir de ahí, podrán los usuarios tener la opción de "seleccionar" sobre los vuelos, paquetes y hoteles.
 
-Para agregar nuevos hoteles, ingrese a http://127.0.0.1:8000/info/create-hotel/ .
+:point_right:Accediendo con el user useradmin(Superuser status), podrá observar las opciones de "Editar" y "Borrar" lo que se ofrece. También abajo de cada link, aparece la opción de "Crear".
 
-Para agregar nuevos vuelos, ingrese a http://127.0.0.1:8000/info/create-vuelo/ .
+:point_right:Todo lo anterior también se puede realizsar desde el link http://127.0.0.1:8000/admin/ .
