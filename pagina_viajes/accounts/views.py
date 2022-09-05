@@ -5,6 +5,7 @@ from django.contrib.auth import login, logout , authenticate
 from accounts.forms import User_registration_form
 from accounts.models import User_profile
 from django.contrib.auth.decorators import login_required
+from accounts.forms import User_registration_form
 
 def login_request(request):
     if request.method == 'POST':
@@ -37,3 +38,37 @@ def register(request):
     elif request.method == 'GET':
         form = User_registration_form()
         return render(request, 'accounts/register.html', {'form': form})
+
+def show_profile(request):
+    return render(request, 'accounts/profile.html', {"user": user})
+
+def edit_profile(request):
+    if request.method == 'POST':
+        post_data = request.POST
+        aux = {
+            "password1": post_data['password1'],
+            "password2": post_data.get('password2'),
+            "username": post_data.get('username'),
+            "description": post_data.get('description'),
+            "webpage": post_data.get('webpage'),
+        }
+        user.update(aux)
+        return redirect(show_profile)
+    if request.method=="GET":
+        miFormulario = User_registration_form(initial=user)
+        return render(request, "accounts/editprofile.html", {"miFormulario": miFormulario, "user": user}) 
+
+def miFormulario(request):
+    return render(request, "")
+
+user = {
+    "username": "Ingrese su usuario",
+    "location": "Coderhouse",
+    "description": "Ingrese su descripción",
+    "webpage": "Ingrese link de sus redes sociales",
+    "email": "No puede modificar su dirección de mail",
+    "_meta": "a",
+    "password1": "Edite su contraseña",
+    "password2": "Edite su contraseña nuevamente",
+    "image": "https://us.123rf.com/450wm/koblizeek/koblizeek2001/koblizeek200100050/138262629-usuario-miembro-de-perfil-de-icono-de-hombre-vector-de-s%C3%ADmbolo-perconal-sobre-fondo-blanco-aislado-.jpg?ver=6"
+}
