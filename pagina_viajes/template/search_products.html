@@ -9,6 +9,9 @@ search
 {% for i in hotel %}
 
     <div class="card" style="width: 18rem;">
+        {% if i.image %}
+        <image src="{{ i.image.url }}" class="card-img-top">
+        {% endif %}
         <div class="card-body">
             <h3 class="card-title">{{i.name}}</h3>
             <h4 class="card-text">{{i.location}}</h4>
