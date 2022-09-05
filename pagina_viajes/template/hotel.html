@@ -30,7 +30,7 @@ Hoteles
             <h4 class="card-text">{{i.location}}</h4>
             <p class="card-text">Fecha de Entrada: {{i.date_departue}}</p>
             <p class="card-text">Fecha de Salida: {{i.date_return}}</p>
-            <h3 class="card-text">Precio: {{i.price}}</h3>
+            <h3 class="card-text">Precio: ${{i.price}}</h3>
         {% if request.user.is_superuser %}
             <a href="/info/update-hotel/{{ i.id }}/" class="btn btn-warning">Editar</a>
             <a href="/info/delete-hotel/{{ i.id }}/" class="btn btn-danger">Borrar</a>

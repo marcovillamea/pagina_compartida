@@ -28,7 +28,7 @@ Paquetes
         <h2 class="card-title">{{paquete.name}}</h2>
         <h3 class="card-subtitle mb-2 text-muted">{{paquete.location}}</h3>
         <p class="card-text">{{paquete.description}}</p>
-        <h3 class="card-title">Precio: {{paquete.price}}</h3>
+        <h3 class="card-title">Precio: ${{paquete.price}}</h3>
         {% if request.user.is_superuser %}
         <a href="/info/update-paquete/{{ paquete.id }}/" class="btn btn-warning">Editar</a>
         <a href="/info/delete-paquete/{{ paquete.id }}/" class="btn btn-danger">Borrar</a>
