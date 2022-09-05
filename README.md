@@ -43,6 +43,6 @@ Aparecerá la opción "Perfil" en el navbar, haga click y se observarán fields 
 
 Para salir, clickee sobre "Cierre Sesión".
 
-:point_right:Accediendo con el user useradmin(Superuser status), podrá observar las opciones de "Editar" y "Borrar" en cada vuelo, paquete y hotel que se ofrece. También abajo de cada link, aparece la opción de "Crear".
+:point_right:Accediendo con el user useradmin(Superuser status), podrá observar las opciones de "Editar" y "Borrar" en cada vuelo, paquete y hotel que se ofrece. También abajo de cada link, aparece la opción de "Crear". Para crear, editar y borrar, tenga en cuenta que el formato de las fechas tienen que ser YYYY-MM-DD.
 
 :point_right:Todo lo anterior también se puede realizsar desde el link http://127.0.0.1:8000/admin/ .
