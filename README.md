@@ -5,6 +5,8 @@ Python 3.10
 
 Django 4.0.6
 
+Pillow
+
 ## Integrantes 
 
 Celeste D'Agostino
