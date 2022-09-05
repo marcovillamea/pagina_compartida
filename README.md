@@ -39,7 +39,7 @@ Se redigirá directamente a login, donde tendrá que volver a ingresas sus datos
 
 A partir de ahí, podrán los usuarios tener la opción de "seleccionar" sobre los vuelos, paquetes y hoteles. Esto llevará a una página en contrucción.
 
-Aparecerá la opción "Perfil" en el navbar, haga click y se observarán fields con instrucciones. Ingrese a "Editar" bajo la foto del uruario para hacer los cambios. Notese que no se podrá cambiar el email ni la contraseña, aunque aparezcan las opciones. Una vez terminado, haga click en "Guardar".
+Aparecerá la opción "Perfil" en el navbar, haga click y se observarán fields con instrucciones. Ingrese a "Editar" bajo la foto del usuario para hacer los cambios. Notese que no se podrá cambiar el email ni la contraseña, aunque aparezcan las opciones. Una vez terminado, haga click en "Guardar".
 
 Para salir, clickee sobre "Cierre Sesión".
 
