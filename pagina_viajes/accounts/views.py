@@ -28,16 +28,15 @@ def register(request):
         form = User_registration_form(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("login")
+            return redirect('login')
         else:
             context = {'errors':form.errors}
             form = User_registration_form()
             context['form'] = form
             return render(request, 'accounts/register.html', context)
+
     elif request.method == 'GET':
         form = User_registration_form()
         return render(request, 'accounts/register.html', {'form': form})
 
-@login_required
-def show_profile(request):
-    return render(request,"accounts/profile.html")
+
