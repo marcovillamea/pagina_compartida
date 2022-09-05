@@ -23,6 +23,8 @@ Haga click en el botón "Más sobre esta página" para conocer más sobre el pro
 
 Accediendo en "Hoteles", "Paquetes" y "Vuelos", podrá observar lo que se ofrece. 
 
+El buscador sólo busca opciones de Hoteles.
+
 :point_right:Para acceder a la cuenta:
 
 - Regístrese e ingrese:
@@ -34,6 +36,8 @@ Accediendo en "Hoteles", "Paquetes" y "Vuelos", podrá observar lo que se ofrece
 Se redigirá directamente a login, donde tendrá que volver a ingresas sus datos.
 
 A partir de ahí, podrán los usuarios tener la opción de "seleccionar" sobre los vuelos, paquetes y hoteles.
+
+Para salir, clickee sobre "Cierre Sesión".
 
 :point_right:Accediendo con el user useradmin(Superuser status), podrá observar las opciones de "Editar" y "Borrar" lo que se ofrece. También abajo de cada link, aparece la opción de "Crear".
 
