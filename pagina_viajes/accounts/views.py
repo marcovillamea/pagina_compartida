@@ -33,10 +33,8 @@ def register(request):
             context = {'errors':form.errors}
             form = User_registration_form()
             context['form'] = form
-            return render(request, 'accounts/register.html', context)
+            return render(request, 'index.html', context)
 
     elif request.method == 'GET':
         form = User_registration_form()
         return render(request, 'accounts/register.html', {'form': form})
-
-
