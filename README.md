@@ -1,4 +1,4 @@
-# Primera Entrega Del Proyecto Final de Coderhouse
+# Entrega Del Proyecto Final de Coderhouse
 
 ## Requerimientos :exclamation:
 Python 3.10
